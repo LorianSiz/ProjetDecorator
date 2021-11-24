@@ -3,6 +3,7 @@ package exodecorateur_angryballs.maladroit;
 import java.awt.Color;
 import java.util.Vector;
 
+import exodecorateur_angryballs.maladroit.controleurs.ControleurGeneral;
 import exodecorateur_angryballs.maladroit.modele.Bille;
 import exodecorateur_angryballs.maladroit.modele.BilleNormal;
 import exodecorateur_angryballs.maladroit.modele.DecoArret;
@@ -70,6 +71,8 @@ public class TestAngryBalls {
 		v4 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
 
 //--------------- ici commence la partie à changer ---------------------------------
+
+		ControleurGeneral controleurGeneral = new ControleurGeneral();
 
 		Bille bille1 = new DecoRebond(new DecoMvtRU(new BilleNormal(p0, rayon, v0, Color.red)));
 		Bille bille2 = new DecoRebond(new DecoPesanteur(

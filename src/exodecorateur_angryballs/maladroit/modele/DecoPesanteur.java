@@ -14,14 +14,14 @@ public class DecoPesanteur extends DecoBille {
 
 	@Override
 	public void gestionAccélération(Vector<Bille> billes) {
-		this.billeDécorée.gestionAccélération(billes);
+		super.gestionAccélération(billes);
 		this.getAccélération().ajoute(this.pesanteur); // contribution du champ de pesanteur (par exemple)
 	}
 
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
 			double hauteur) {
-		this.billeDécorée.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
+		super.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
 	}
 
 }

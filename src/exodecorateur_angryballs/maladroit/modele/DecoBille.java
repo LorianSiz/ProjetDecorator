@@ -1,8 +1,10 @@
 package exodecorateur_angryballs.maladroit.modele;
 
 import java.awt.Color;
+import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
+import mesmaths.mecanique.MecaniquePoint;
 
 public abstract class DecoBille extends Bille {
 
@@ -43,7 +45,14 @@ public abstract class DecoBille extends Bille {
 	}
 
 	@Override
-	public abstract void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
-			double hauteur);
+	public void gestionAccélération(Vector<Bille> billes) {
+		this.billeDécorée.gestionAccélération(billes);
+	}
+
+	@Override
+	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
+								 double hauteur) {
+		this.billeDécorée.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
+	}
 
 }

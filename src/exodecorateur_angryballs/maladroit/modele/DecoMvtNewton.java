@@ -9,7 +9,7 @@ public class DecoMvtNewton extends DecoBille {
 
 	@Override
 	public void gestionAccélération(Vector<Bille> billes) {
-		this.billeDécorée.gestionAccélération(billes);
+		super.gestionAccélération(billes);
 		this.getAccélération().ajoute(OutilsBille.gestionAccélérationNewton(this, billes)); // contribution de
 																							// l'accélération due à
 																							// l'attraction des autres
@@ -19,7 +19,7 @@ public class DecoMvtNewton extends DecoBille {
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
 			double hauteur) {
-		this.billeDécorée.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
+		super.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
 	}
 
 }

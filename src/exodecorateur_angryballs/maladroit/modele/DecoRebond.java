@@ -12,13 +12,13 @@ public class DecoRebond extends DecoBille {
 
 	@Override
 	public void gestionAccélération(Vector<Bille> billes) {
-		this.billeDécorée.gestionAccélération(billes);
+		super.gestionAccélération(billes);
 	}
 
 	@Override
 	public void collisionContour(double abscisseCoinHautGauche, double ordonnéeCoinHautGauche, double largeur,
 			double hauteur) {
-		this.billeDécorée.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
+		super.collisionContour(abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
 		Collisions.collisionBilleContourAvecRebond(this.getPosition(), this.getRayon(), this.getVitesse(),
 				abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
 	}
