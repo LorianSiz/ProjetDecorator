@@ -1,5 +1,7 @@
 package exodecorateur_angryballs.maladroit.controleurs;
 
+import java.awt.event.MouseEvent;
+
 public class ControleurBilleLibre extends ControleurEtat {
 
     public ControleurBilleLibre(ControleurGeneral controleurGeneral, ControleurEtat suivant) {
@@ -8,7 +10,6 @@ public class ControleurBilleLibre extends ControleurEtat {
 
     @Override
     protected void traiteCasGeneral(int x, int y) {
-        System.out.println("Je suis dans la fonction");
         //Vecteur positionSouris = new Vecteur(x, y);
 //            int xMinBille = (int) (controleurGeneral.billeState.getPosition().x - controleurGeneral.billeState.getRayon());
 //            int xMaxBille = (int) (controleurGeneral.billeState.getPosition().x + controleurGeneral.billeState.getRayon());
@@ -22,6 +23,21 @@ public class ControleurBilleLibre extends ControleurEtat {
     }
 
     protected void traiteBilleLibre(){
+
+    }
+
+    @Override
+    public void clicDetecte(MouseEvent e) {
+        this.controleurGeneral.setControleurCourant(this.controleurGeneral.controleurBilleTenue);
+    }
+
+    @Override
+    public void clicRelache(MouseEvent e) {
+
+    }
+
+    @Override
+    public void clicGlisse(MouseEvent e) {
 
     }
 

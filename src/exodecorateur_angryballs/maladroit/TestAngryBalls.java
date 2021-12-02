@@ -4,15 +4,7 @@ import java.awt.Color;
 import java.util.Vector;
 
 import exodecorateur_angryballs.maladroit.controleurs.ControleurGeneral;
-import exodecorateur_angryballs.maladroit.modele.Bille;
-import exodecorateur_angryballs.maladroit.modele.BilleNormal;
-import exodecorateur_angryballs.maladroit.modele.DecoArret;
-import exodecorateur_angryballs.maladroit.modele.DecoFrottement;
-import exodecorateur_angryballs.maladroit.modele.DecoMvtNewton;
-import exodecorateur_angryballs.maladroit.modele.DecoMvtRU;
-import exodecorateur_angryballs.maladroit.modele.DecoPasseMuraille;
-import exodecorateur_angryballs.maladroit.modele.DecoPesanteur;
-import exodecorateur_angryballs.maladroit.modele.DecoRebond;
+import exodecorateur_angryballs.maladroit.modele.*;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
 import mesmaths.geometrie.base.Vecteur;
 
@@ -74,13 +66,13 @@ public class TestAngryBalls {
 
 		ControleurGeneral controleurGeneral = new ControleurGeneral();
 
-		Bille bille1 = new DecoRebond(new DecoMvtRU(new BilleNormal(p0, rayon, v0, Color.red)));
-		Bille bille2 = new DecoRebond(new DecoPesanteur(
-				new DecoFrottement(new BilleNormal(p1, rayon, v1, Color.yellow)), new Vecteur(0, 0.001)));
-		Bille bille3 = new DecoRebond(
-				new DecoFrottement(new DecoMvtNewton(new BilleNormal(p2, rayon, v2, Color.green))));
-		Bille bille4 = new DecoPasseMuraille(new DecoMvtRU(new BilleNormal(p3, rayon, v3, Color.cyan)));
-		Bille bille5 = new DecoMvtNewton(new DecoArret(new BilleNormal(p4, rayon, v4, Color.black)));
+		Bille bille1 = new DecoBillePilotée(new DecoRebond(new DecoMvtRU(new BilleNormal(p0, rayon, v0, Color.red))));
+		Bille bille2 = new DecoBillePilotée(new DecoRebond(new DecoPesanteur(
+				new DecoFrottement(new BilleNormal(p1, rayon, v1, Color.yellow)), new Vecteur(0, 0.001))));
+		Bille bille3 = new DecoBillePilotée(new DecoRebond(
+				new DecoFrottement(new DecoMvtNewton(new BilleNormal(p2, rayon, v2, Color.green)))));
+		Bille bille4 = new DecoBillePilotée(new DecoPasseMuraille(new DecoMvtRU(new BilleNormal(p3, rayon, v3, Color.cyan))));
+		Bille bille5 = new DecoBillePilotée(new DecoMvtNewton(new DecoArret(new BilleNormal(p4, rayon, v4, Color.black))));
 
 		billes.add(bille1);
 		billes.add(bille2);
@@ -106,6 +98,8 @@ public class TestAngryBalls {
 		cadre.lancerBilles.addActionListener(écouteurBoutonLancer); // pourrait être remplacé par Observable - Observer
 		cadre.arrêterBilles.addActionListener(écouteurBoutonArrêter); // pourrait être remplacé par Observable -
 																		// Observer
+		cadre.billard.addMouseListener(controleurGeneral);
+		cadre.billard.addMouseMotionListener(controleurGeneral);
 
 	}
 

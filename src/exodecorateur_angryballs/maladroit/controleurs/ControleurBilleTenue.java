@@ -1,5 +1,7 @@
 package exodecorateur_angryballs.maladroit.controleurs;
 
+import java.awt.event.MouseEvent;
+
 public class ControleurBilleTenue extends ControleurEtat {
     public ControleurBilleTenue(ControleurGeneral controleurGeneral, ControleurEtat suivant) {
         super(controleurGeneral, suivant);
@@ -20,6 +22,21 @@ public class ControleurBilleTenue extends ControleurEtat {
     }
 
     protected void traiteBilleAttrapee(int x, int y){
+
+    }
+
+    @Override
+    public void clicDetecte(MouseEvent e) {
+
+    }
+
+    @Override
+    public void clicRelache(MouseEvent e) {
+        this.controleurGeneral.setControleurCourant(this.controleurGeneral.controleurBilleLibre);
+    }
+
+    @Override
+    public void clicGlisse(MouseEvent e) {
 
     }
 

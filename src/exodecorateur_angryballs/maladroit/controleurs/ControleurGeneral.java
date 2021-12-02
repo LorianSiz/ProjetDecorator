@@ -38,12 +38,12 @@ public class ControleurGeneral implements MouseListener, MouseMotionListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        this.controleurCourant.clicDetecte(e);
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        this.controleurCourant.clicRelache(e);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class ControleurGeneral implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-
+        this.controleurCourant.clicGlisse(e);
     }
 
     @Override
