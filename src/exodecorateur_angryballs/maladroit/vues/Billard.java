@@ -1,7 +1,6 @@
 package exodecorateur_angryballs.maladroit.vues;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.Vector;
 
 import exodecorateur_angryballs.maladroit.modele.Bille;
@@ -33,6 +32,18 @@ public class Billard extends Canvas {
 			this.billes.get(i).dessine(graphics);
 
 		// System.out.println("billes dans le billard = " + billes);
+	}
+
+	@Override
+	public void update(Graphics graphics) {
+		Graphics APgraphics; //Charge les graphiques en arrière-plan
+		Image APscreen; //Charge la fenêtre en arrière-plan
+		Dimension d = getSize(); //Dimension de la fenêtre
+
+		APscreen = createImage(d.width, d.height);
+		APgraphics = APscreen.getGraphics();
+		paint(APgraphics);
+		graphics.drawImage(APscreen, 0, 0, this);
 	}
 
 }

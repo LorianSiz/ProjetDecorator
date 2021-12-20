@@ -64,7 +64,7 @@ public class TestAngryBalls {
 
 //--------------- ici commence la partie à changer ---------------------------------
 
-		ControleurGeneral controleurGeneral = new ControleurGeneral();
+		ControleurGeneral controleurGeneral = new ControleurGeneral(billes);
 
 		Bille bille1 = new DecoBillePilotée(new DecoRebond(new DecoMvtRU(new BilleNormal(p0, rayon, v0, Color.red))));
 		Bille bille2 = new DecoBillePilotée(new DecoRebond(new DecoPesanteur(

@@ -44,6 +44,10 @@ public abstract class DecoBille extends Bille {
 		return this.billeDécorée.getCouleur();
 	}
 
+	public Bille getBilleDécorée() {
+		return this.billeDécorée;
+	}
+
 	@Override
 	public void gestionAccélération(Vector<Bille> billes) {
 		this.billeDécorée.gestionAccélération(billes);

@@ -12,13 +12,6 @@ public abstract class ControleurEtat{
         this.suivant = suivant;
     }
 
-    public void traite(int x, int y){
-        System.out.println("Apelle de traite Cas general");
-        traiteCasGeneral(x,y);
-    }
-
-    protected abstract void traiteCasGeneral(int x,int y);
-
     public abstract void clicDetecte(MouseEvent e);
 
     public abstract void clicRelache(MouseEvent e);
