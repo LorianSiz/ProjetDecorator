@@ -6,7 +6,7 @@ import java.util.Vector;
 import mesmaths.geometrie.base.Vecteur;
 import mesmaths.mecanique.MecaniquePoint;
 
-public abstract class DecoBille extends Bille {
+public abstract class DecoBille extends Bille { //Base de la bille pour le décorateur
 
 	protected Bille billeDécorée;
 

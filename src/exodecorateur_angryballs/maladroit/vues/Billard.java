@@ -35,7 +35,7 @@ public class Billard extends Canvas {
 	}
 
 	@Override
-	public void update(Graphics graphics) {
+	public void update(Graphics graphics) { //Pour le double buffering
 		Graphics APgraphics; //Charge les graphiques en arrière-plan
 		Image APscreen; //Charge la fenêtre en arrière-plan
 		Dimension d = getSize(); //Dimension de la fenêtre

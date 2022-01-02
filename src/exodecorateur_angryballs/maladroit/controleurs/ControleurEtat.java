@@ -2,7 +2,7 @@ package exodecorateur_angryballs.maladroit.controleurs;
 
 import java.awt.event.MouseEvent;
 
-public abstract class ControleurEtat{
+public abstract class ControleurEtat {//Base des états de la bille
     ControleurGeneral controleurGeneral;
     public ControleurEtat suivant;
 

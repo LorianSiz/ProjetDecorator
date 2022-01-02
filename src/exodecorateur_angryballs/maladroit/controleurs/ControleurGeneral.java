@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.Vector;
 
-public class ControleurGeneral implements MouseListener, MouseMotionListener {
+public class ControleurGeneral implements MouseListener, MouseMotionListener { //Contrôleur général du state
 
     Vector<Bille> listeBilles;
     DecoBillePilotée billePilotée;
